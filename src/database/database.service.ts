@@ -8,7 +8,7 @@ import * as mongoose from 'mongoose';
 @Injectable()
 export class DatabaseService {
   constructor(
-    @Inject('DATABASE_MONGO') private readonly mongoDb: typeof mongoose,
+    @Inject('DatabaseConnection') private readonly mongoDb: typeof mongoose,
   ) {}
 
   isConnected(): boolean {

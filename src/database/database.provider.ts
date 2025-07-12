@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config';
 
 export const databaseProvider = [
   {
-    provide: 'DATABASE_MONGO',
+    provide: 'DatabaseConnection',
     useFactory: (configService: ConfigService): Promise<typeof mongoose> => {
       return mongoose.connect(configService.get('DATABASE_URL')!);
     },
